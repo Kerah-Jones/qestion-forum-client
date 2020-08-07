@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CreateQuestion from '../CreateQuestion/CreateQuestion'
+import Question from './Question'
 import axios from 'axios'
 
 import apiUrl from './../../apiConfig'
@@ -13,6 +13,7 @@ class QuestionPage extends Component {
     }
   }
   componentDidMount () {
+    console.log('props are:', this.props)
     axios({
       method: 'GET',
       url: apiUrl + '/questions'
@@ -24,12 +25,11 @@ class QuestionPage extends Component {
   }
   render () {
     return (
-
       <div className='container'>
-        <div className='column' style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div className='column' >
           {this.state.questionList.map((question, questionIndex) => (
-            <CreateQuestion key={questionIndex} name={question.question} description={question.description} category={question.category}
-              questionId={question._id} token={this.props.token} msgAlert={this.props.msgAlert}/>
+            <Question key={questionIndex} name={question.question} description={question.description} category={question.category}
+              questionId={question._id} msgAlert={this.props.msgAlert}/>
           ))}
         </div>
       </div>
