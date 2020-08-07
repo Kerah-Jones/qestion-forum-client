@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { createQuestion } from '../../api/auth'
+import { createQuestion } from '../../api/questions'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
@@ -23,10 +23,10 @@ class CreateQuestion extends Component {
   onCreateQuestion = event => {
     event.preventDefault()
 
-    const { msgAlert, history, setUser } = this.props
+    const { msgAlert, history, user } = this.props
 
-    createQuestion(this.state)
-      .then(res => setUser(res.data.user))
+    createQuestion(this.state, user)
+      // .then(res => user(res.data.user))
       .then(() => msgAlert({
         heading: 'Question Posted Sucessfully',
         message: messages.createQuestionSuccess,
@@ -51,38 +51,39 @@ class CreateQuestion extends Component {
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Create Question</h3>
           <Form onSubmit={this.onCreateQuestion}>
-            <Form.Group controlId="Question">
-              <Form.Label>Question</Form.Label>
+            <Form.Group>
               <Form.Control
                 required
+                size="lg"
                 type="text"
-                name="text"
+                name="question"
                 value={question}
-                placeholder="Enter Question Here"
+                placeholder="Ask Your Question!"
                 onChange={this.handleChange}
               />
             </Form.Group>
+            <br />
             <Form.Group controlId="description">
-              <Form.Label>Password</Form.Label>
-              <Form.Input
+              <Form.Label>Description</Form.Label>
+              <Form.Control
                 required
+                as="textarea"
+                rows="5"
                 name="description"
+                placeholder= "Type Description Here!"
                 value={description}
-                type="textarea"
-                placeholder="Desciption"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="category">
               <Form.Label>Category</Form.Label>
-              <Form.Input
-                required
-                name="category"
-                value={category}
-                type="textarea"
-                placeholder="Category"
-                onChange={this.handleChange}
-              />
+              <Form.Control as="select" name="category" value={category} onChange={this.handleChange}>
+                <option>Coding</option>
+                <option>Random</option>
+                <option>Animals</option>
+                <option>Science</option>
+                <option>Sports</option>
+              </Form.Control>
             </Form.Group>
             <Button
               variant="primary"

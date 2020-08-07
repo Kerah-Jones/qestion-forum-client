@@ -29,6 +29,7 @@ export const signIn = credentials => {
 }
 
 export const signOut = user => {
+  console.log(user)
   return axios({
     url: apiUrl + '/sign-out',
     method: 'DELETE',

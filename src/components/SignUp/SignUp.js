@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 

@@ -1,10 +1,14 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const createQuestion = question => {
+export const createQuestion = (question, user) => {
+  console.log(question, user)
   return axios({
     method: 'POST',
     url: apiUrl + '/questions',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
     data: {
       question: {
         question: question.question,

@@ -7,6 +7,8 @@ import Header from '../Header/Header'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
+import QuestionPage from '../QuestionPage/QuestionPage'
+import CreateQuestion from '../CreateQuestion/CreateQuestion'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 class App extends Component {
@@ -47,6 +49,12 @@ class App extends Component {
           )} />
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} path="/questions" render={() => (
+            <QuestionPage msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path="/create-question" render={() => (
+            <CreateQuestion msgAlert={this.msgAlert} user={user}/>
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
