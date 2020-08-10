@@ -7,5 +7,7 @@ export default {
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   createQuestionSuccess: 'You have sucessfully created a question!',
-  createQuestionFailure: 'Failur apon creating question, please check feilds are filled out correctly.'
+  createQuestionFailure: 'Failure apon creating question, please check feilds are filled out correctly.',
+  deleteQuestionSuccess: 'Question Successfully Deleted',
+  deleteQuestionFailure: 'Failed to delete question: You are not the author of this post.'
 }

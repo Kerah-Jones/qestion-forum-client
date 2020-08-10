@@ -13,10 +13,13 @@ class QuestionPage extends Component {
     }
   }
   componentDidMount () {
-    console.log('props are:', this.props)
+    console.log('This is ', this.props.user.token)
     axios({
       method: 'GET',
-      url: apiUrl + '/questions'
+      url: apiUrl + '/questions',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
     })
       .then(response => {
         this.setState({ questionList: response.data.questions })
@@ -29,7 +32,7 @@ class QuestionPage extends Component {
         <div className='column' >
           {this.state.questionList.map((question, questionIndex) => (
             <Question key={questionIndex} name={question.question} description={question.description} category={question.category}
-              questionId={question._id} msgAlert={this.props.msgAlert}/>
+              questionId={question._id} user={this.props.user} msgAlert={this.props.msgAlert}/>
           ))}
         </div>
       </div>

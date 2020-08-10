@@ -1,18 +1,42 @@
 import React from 'react'
-// import axios from 'axios'
-// import apiUrl from '/../../apiConfig'
+import axios from 'axios'
+import apiUrl from './../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
 const Question = (props) => {
   const questionStyles = {
-    border: '3px solid black',
+    border: '1px solid black',
     margin: '30px 20px',
     padding: '5px',
+    width: '700px',
     background: 'white'
   }
 
   const addButtonStyles = {
     color: 'black',
-    background: '#A6D0E4'
+    background: 'green'
+  }
+  const deleteQuestion = (event) => {
+    console.log('This is ', props)
+    axios({
+      method: 'DELETE',
+      url: apiUrl + `/questions/${props.questionId}`,
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
+      .then(() => props.msgAlert({
+        heading: 'Deleted Question',
+        message: messages.deleteQuestionSuccess,
+        variant: 'success'
+      }))
+      .catch(() => {
+        props.msgAlert({
+          heading: 'Failed to Delete',
+          message: messages.deleteQuestionFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   return (
@@ -21,7 +45,9 @@ const Question = (props) => {
       <p>Description: {props.description}</p>
       <p>Category: {props.category}</p>
       <button style={addButtonStyles}>Open Question</button>
+      <button onClick={deleteQuestion}>Delete</button>
     </div>
   )
 }
+
 export default Question

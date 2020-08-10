@@ -43,11 +43,6 @@ export const deleteQuestion = (questionId, user) => {
     url: apiUrl + '/questions/' + questionId.question.id,
     headers: {
       Authorization: `Token token= ${user.token}`
-    },
-    data: {
-      question: {
-        _id: questionId.question.id
-      }
     }
   })
 }
