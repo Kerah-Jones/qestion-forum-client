@@ -9,6 +9,7 @@ import SignOut from '../SignOut/SignOut'
 import QuestionPage from '../QuestionPage/QuestionPage'
 import CreateQuestion from '../CreateQuestion/CreateQuestion'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import UpdateQuestion from '../QuestionPage/UpdateQuestion'
 
 class App extends Component {
   constructor () {
@@ -54,6 +55,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path="/create-question" render={() => (
             <CreateQuestion msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} path="/edit-question/:id" render={(props) => (
+            <UpdateQuestion {...props} msgAlert={this.msgAlert} user={user}/>
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />

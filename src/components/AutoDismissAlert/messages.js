@@ -9,5 +9,7 @@ export default {
   createQuestionSuccess: 'You have sucessfully created a question!',
   createQuestionFailure: 'Failure apon creating question, please check feilds are filled out correctly.',
   deleteQuestionSuccess: 'Question Successfully Deleted',
-  deleteQuestionFailure: 'Failed to delete question: You are not the author of this post.'
+  deleteQuestionFailure: 'Failed to delete question: You are not the author of this post.',
+  updateQuestionSuccess: 'Updated Question Sucessfully',
+  updateQuestionFailure: 'Failed to update question, please check feilds are filled correctly.'
 }

@@ -2,7 +2,7 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const createQuestion = (question, user) => {
-  console.log(question, user)
+  console.log(question)
   return axios({
     method: 'POST',
     url: apiUrl + '/questions',
@@ -19,30 +19,19 @@ export const createQuestion = (question, user) => {
   })
 }
 
-export const updateQuestionIndex = (question, user, data) => {
+export const updateQuestion = (id, user, data) => {
   return axios({
-    url: apiUrl + '/questions/' + data.question.id,
+    url: apiUrl + '/questions/' + id,
     method: 'PATCH',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
     data: {
       question: {
-        question: question.question,
-        description: question.description,
-        category: question.category
+        question: data.question,
+        description: data.description,
+        category: data.category
       }
-    }
-  })
-}
-
-export const deleteQuestion = (questionId, user) => {
-  console.log(questionId)
-  return axios({
-    method: 'DELETE',
-    url: apiUrl + '/questions/' + questionId.question.id,
-    headers: {
-      Authorization: `Token token= ${user.token}`
     }
   })
 }

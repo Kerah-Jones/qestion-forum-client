@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
-import UpdateQuestion from './UpdateQuestion'
 
 const Question = (props) => {
   const questionStyles = {
@@ -46,7 +46,9 @@ const Question = (props) => {
       <p>Category: {props.category}</p>
       <button style={addButtonStyles}>Open Question</button>
       <button onClick={deleteQuestion}>Delete</button>
-      <button onClick={UpdateQuestion}>Edit</button>
+      <Link to={`/edit-question/${props.questionId}/edit`}>
+        <button>Edit</button>
+      </Link>
     </div>
   )
 }
