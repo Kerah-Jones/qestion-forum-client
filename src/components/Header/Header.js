@@ -17,9 +17,12 @@ const unauthenticatedOptions = (
     <Nav.Link href="#sign-in">Sign In</Nav.Link>
   </Fragment>
 )
+const navStyle = {
+  backgroundColor: '#b2d3be'
+}
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar style={navStyle} variant="dark" expand="md">
     <Navbar.Brand href="#">
       Question Quest
     </Navbar.Brand>

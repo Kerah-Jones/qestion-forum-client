@@ -2,14 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import apiUrl from './../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
+import UpdateQuestion from './UpdateQuestion'
 
 const Question = (props) => {
   const questionStyles = {
-    border: '1px solid black',
+    borderRadius: '25px 0',
     margin: '30px 20px',
     padding: '5px',
-    width: '700px',
-    background: 'white'
+    width: '700px'
   }
 
   const addButtonStyles = {
@@ -40,12 +40,13 @@ const Question = (props) => {
   }
 
   return (
-    <div style={questionStyles}>
+    <div className="box" style={questionStyles}>
       <h2>{props.name}</h2>
       <p>Description: {props.description}</p>
       <p>Category: {props.category}</p>
       <button style={addButtonStyles}>Open Question</button>
       <button onClick={deleteQuestion}>Delete</button>
+      <button onClick={UpdateQuestion}>Edit</button>
     </div>
   )
 }
