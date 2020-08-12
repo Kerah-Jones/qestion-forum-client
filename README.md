@@ -20,13 +20,13 @@ Then I worked on wireframes and the layout of what I wanted my application to lo
 Next I created the Entity Relationship Diagram(ERD) in which I mapped out my models which consited of users,
 questions, andswers (front-end in developing process). I used problem solving capabilities to debug and solve problems.
 
-#User Stories
+# User Stories
 1. User is able to create questions
 2. User can update
 3. User can delete
 4. User can view their own questions and others
 
-#Technologies Used
+# Technologies Used
 
 - React.js
 - Express.js
@@ -39,7 +39,7 @@ questions, andswers (front-end in developing process). I used problem solving ca
 ![Screen Shot 2020-08-11 at 11 43 47 PM](https://user-images.githubusercontent.com/65182743/89972752-98e46c80-dc2c-11ea-89ee-28cafd86a854.png)
 
 
-#Future Developement Plans
+# Future Developement Plans
 
 - Allow users to answer questions.
 - Allow users to response to answer.
