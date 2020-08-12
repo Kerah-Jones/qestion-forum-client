@@ -66,7 +66,7 @@ questions, andswers (front-end in developing process). I used problem solving ca
 9. Your commit title should read Initial commit.
 10. Install dependencies with npm install.
 11. Create a new repository on github.com
-12. Name the new repository with the same name used on Step 3.
-13. Follow the instructions on your new repository's setup page. For details on how to push to Github, refer to the section on Github entitled "…or push an existing repository from the command line." Further documentation can be found here.
+12. Name the new repository with the same name used on Step 5.
+13. Follow instructions on pushing code on respository set up page on Github account.
 14. To view application browser run `npm start`
-15. Note the you can only send requests to the api if it is already running in terminal, both on localhost:. Please see https://github.com/kerah-jones/question-forum-server for instructions.
+15. Note you can only send requests to the api if it is already running in terminal, both on localhost:4741. Please see https://github.com/kerah-jones/question-forum-server.
