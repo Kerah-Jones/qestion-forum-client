@@ -11,5 +11,7 @@ export default {
   deleteQuestionSuccess: 'Question Successfully Deleted',
   deleteQuestionFailure: 'Failed to delete question: You are not the author of this post.',
   updateQuestionSuccess: 'Updated Question Sucessfully',
-  updateQuestionFailure: 'Failed to update question, please check feilds are filled correctly.'
+  updateQuestionFailure: 'Failed to update question, please check feilds are filled correctly.',
+  createAnswerSuccess: 'You have sucessfully answer this question!',
+  createAnswerFailure: 'Failure apon answering question, please check feilds are filled out correctly.'
 }

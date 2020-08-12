@@ -18,7 +18,7 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 const navStyle = {
-  backgroundColor: '#b2d3be'
+  backgroundColor: '#ef6c57'
 }
 
 const Header = ({ user }) => (

@@ -10,6 +10,7 @@ import QuestionPage from '../QuestionPage/QuestionPage'
 import CreateQuestion from '../CreateQuestion/CreateQuestion'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import UpdateQuestion from '../QuestionPage/UpdateQuestion'
+import AnswerQuestion from '../QuestionPage/Answer'
 
 class App extends Component {
   constructor () {
@@ -55,6 +56,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path="/create-question" render={() => (
             <CreateQuestion msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} path="/answer-question" render={() => (
+            <AnswerQuestion msgAlert={this.msgAlert} user={user}/>
           )} />
           <AuthenticatedRoute user={user} path="/edit-question/:id" render={(props) => (
             <UpdateQuestion {...props} msgAlert={this.msgAlert} user={user}/>

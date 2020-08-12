@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
+// import answerQuestion from './Answer'
 
 const Question = (props) => {
   const questionStyles = {
-    borderRadius: '25px 0',
+    border: '4px solid white',
+    borderRadius: '15px',
     margin: '30px 20px',
     padding: '5px',
-    width: '700px'
+    backgroundColor: '#8fbbaf',
+    color: 'white'
   }
 
-  const addButtonStyles = {
-    color: 'black',
-    background: 'green'
+  const linkStyles = {
+    padding: '10px'
   }
   const deleteQuestion = (event) => {
     console.log('This is ', props)
@@ -44,11 +46,8 @@ const Question = (props) => {
       <h2>{props.name}</h2>
       <p>Description: {props.description}</p>
       <p>Category: {props.category}</p>
-      <button style={addButtonStyles}>Open Question</button>
       <button onClick={deleteQuestion}>Delete</button>
-      <Link to={`/edit-question/${props.questionId}/edit`}>
-        <button>Edit</button>
-      </Link>
+      <Link style={linkStyles} to={`/edit-question/${props.questionId}/edit`}>Edit</Link>
     </div>
   )
 }
