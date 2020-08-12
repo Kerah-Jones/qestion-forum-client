@@ -108,7 +108,7 @@ const UpdateQuestion = (props) => {
             variant="primary"
             type="submit"
           >
-          Ask Question!
+          Submit!
           </Button>
         </Form>
       </div>
