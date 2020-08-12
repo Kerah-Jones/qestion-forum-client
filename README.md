@@ -54,7 +54,7 @@ questions, andswers (front-end in developing process). I used problem solving ca
 - run `npm start` to view in browser
 - Note must have sever running to sent requests to api
 
-### Wat to use this as a templete: Create New Respository
+### Want to use this as a templete: Create New Respository
 1. Download Zip File.
 2. Do Not Fork And Clone
 3. Click the "Clone or Download" button and select "Download Zip".
