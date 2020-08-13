@@ -10,7 +10,7 @@ to create, update, edit, and delete questions. Features of answering questions i
 https://kerah-jones.github.io/qestion-forum-client/#/
 
 ### Back-End Respository
-https://github.com/kerah-jones/question-forum-server
+https://github.com/Kerah-Jones/question-forum-server
 
 ### Deployed API
 https://damp-meadow-09654.herokuapp.com/
@@ -52,7 +52,7 @@ questions, andswers (front-end in developing process). I used problem solving ca
 
 - Fork and Clone Respository
 - run `npm install`
-- run `npm start` to view in browser
+- run `npm start` to view in browser (loacalhost:7165)
 - Note must have sever running to sent requests to api
 
 ### Want to use this as a templete: Create New Respository
@@ -70,4 +70,4 @@ questions, andswers (front-end in developing process). I used problem solving ca
 12. Name the new repository with the same name used on Step 5.
 13. Follow instructions on pushing code on respository set up page on Github account.
 14. To view application browser run `npm start`
-15. Note you can only send requests to the api if it is already running in terminal, both on localhost:4741. Please see https://github.com/kerah-jones/question-forum-server.
+15. Note you can only send requests to the api if it is already running in terminal, localhost:4741. Please see https://github.com/kerah-jones/question-forum-server.
